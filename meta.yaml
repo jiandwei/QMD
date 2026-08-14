@@ -1,0 +1,66 @@
+# =====================================================
+#  通用元数据配置（可被多个 .qmd 文件引用）
+#  使用方法：在 .qmd 头部添加
+#    metadata-files: _metadata.yml
+# =====================================================
+
+lang: zh
+reference-location: block
+citations-hover: true
+cache: true
+number-sections: true
+number-depth: 3
+mainfont: SimSun   # 若仅输出 HTML 可忽略，若输出 PDF 建议放入 format.pdf 中
+
+# 执行选项
+execute:
+  freeze: auto
+  warning: false
+  error: false
+
+# 交叉引用与自定义浮动对象
+crossref:
+  custom:
+    - kind: float
+      key: hyp
+      reference-prefix: "假设"
+      caption-location: top
+    - kind: float
+      key: mec
+      reference-prefix: "机制"
+      caption-location: top
+
+# 参考文献（建议改为相对路径，方便项目迁移）
+bibliography: "C:/Users/wei/Documents/论文/我的文库.bib"
+# bibliographystyle: "C:/Users/wei/AppData/Roaming/.emacs.d/assets/csl-styles/经济学（季刊）.csl"
+# 若使用 Quarto 标准字段，建议将上面 bibliographystyle 替换为：
+csl: "C:/Users/wei/AppData/Roaming/.emacs.d/assets/csl-styles/经济学（季刊）.csl"
+
+# 编辑器相关设置
+editor:
+  render-on-save: true
+editor_options:
+  chunk_output_type: console
+  markdown:
+    wrap: sentence
+
+# 输出格式
+format:
+  html:
+    self_contained: true
+    math_method:
+      engine: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    df-print: paged
+    fig-width: 7
+    fig-height: 5
+    title-block-banner: true
+    theme:
+      light: cosmo
+      dark: darkly
+    highlight-style:
+      light: github-light
+      dark: github-dark
+    respect-user-color-scheme: true
+    smooth-scroll: true
+    css: "https://cdn.jsdelivr.net/gh/jiandwei/QMD@master/style.css"
